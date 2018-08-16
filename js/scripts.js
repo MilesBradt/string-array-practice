@@ -30,7 +30,7 @@
 $(document).ready(function() {
   $("form#words").submit(function(event){
     event.preventDefault();
-
+    var vowels = 0;
     var userWords = [];
 
     $("input#userInput").each(function(){
@@ -39,8 +39,13 @@ $(document).ready(function() {
     });
 
     results = userWords.toString().split("");
-    
+    results.forEach(function(letter){
+      if (letter === "a" || letter === "e" || letter === "i" || letter === "o" || letter === "u") {
+        vowels ++;
+      }
+    });
 
     console.log(results);
+    console.log(vowels);
   });
 });
