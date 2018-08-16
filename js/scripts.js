@@ -32,12 +32,15 @@ $(document).ready(function() {
     event.preventDefault();
 
     var userWords = [];
-    
+
     $("input#userInput").each(function(){
       var vowels = $(this).val();
       userWords.push(vowels);
     });
 
-    console.log(userWords);
+    results = userWords.toString().split("");
+    
+
+    console.log(results);
   });
 });
